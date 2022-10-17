@@ -36,16 +36,32 @@ function play() {
             <span>${num}</span>
             
         `;
-        if(bombsPosition.includes(num)){
+        if(bombsPosition.includes(num)) {
+            cell.classList.add('bomb');
             cell.addEventListener('click', function() {
-                this.classList.add('red');
-        })};
+                const arrBomb = document.querySelectorAll('.bomb');
+                for(let i = 0; i < arrBomb.length; i++) {
+                    
+                    arrBomb[i].classList.add('red');
+                    
+                   
+                }
+            });
+            } else {
+                cell.addEventListener('click', function() {
+                    this.classList.add('green');
+                });
+            }
+            return cell;
+        }
 
-        cell.addEventListener('click', function() {
-            this.classList.add('green');
-        });
-        return cell;
+    while(bombsPosition.length < NUM_BOMB) {
+        const bomb = randomNumber(1, numCell);
+        if(!bombsPosition.includes(bomb)) {
+            bombsPosition.push(bomb);
+        }
     }
+    console.log(bombsPosition);
     
     while(bombsPosition.length < NUM_BOMB) {
         const bomb = randomNumber(1, numCell);

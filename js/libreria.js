@@ -21,3 +21,9 @@ function removeFirstNotification(){
     console.log(alertToRemove);
    if(alertToRemove) alertToRemove.remove();
 }
+function addElementClassHTML(tagElement, className, fatherElement){
+    const tag = document.createElement(tagElement);
+    tag.className = className;
+    fatherElement.append(tag);
+    return tag;
+}
