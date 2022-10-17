@@ -37,6 +37,8 @@ function play() {
             <span></span>
             
         `;
+        
+            
 
         if (bombsPosition.includes(num)) {
             cell.classList.add('bomb');
@@ -45,8 +47,12 @@ function play() {
                 for (let i = 0; i < arrBomb.length; i++) {
                     arrBomb[i].classList.add('red');
                 }
-                
                 cucu.classList.add('noncliccabile');
+            
+            
+
+            
+
             } 
             
             
