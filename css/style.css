@@ -38,4 +38,6 @@ main {
 }
 .red{
     background-color: red;
+    background-image: url('../img/bomba.svg');
+    padding:2%;
 }

@@ -33,7 +33,7 @@ function play() {
         cell.style.width = `calc(100% / ${cellPerSide})`;
         cell.style.height = `calc(100% / ${cellPerSide})`;
         cell.innerHTML = `
-            <span>${num}</span>
+            <span></span>
             
         `;
         if(bombsPosition.includes(num)) {
@@ -41,11 +41,9 @@ function play() {
             cell.addEventListener('click', function() {
                 const arrBomb = document.querySelectorAll('.bomb');
                 for(let i = 0; i < arrBomb.length; i++) {
-                    
                     arrBomb[i].classList.add('red');
-                    
-                   
-                }
+               
+                }    
             });
             } else {
                 cell.addEventListener('click', function() {
@@ -55,13 +53,7 @@ function play() {
             return cell;
         }
 
-    while(bombsPosition.length < NUM_BOMB) {
-        const bomb = randomNumber(1, numCell);
-        if(!bombsPosition.includes(bomb)) {
-            bombsPosition.push(bomb);
-        }
-    }
-    console.log(bombsPosition);
+    
     
     while(bombsPosition.length < NUM_BOMB) {
         const bomb = randomNumber(1, numCell);
