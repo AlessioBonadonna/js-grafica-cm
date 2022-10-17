@@ -40,4 +40,10 @@ main {
     background-color: red;
     background-image: url('../img/bomba.svg');
     padding:2%;
+    background-position: center;  
+    background-repeat: no-repeat
+
+}
+.noncliccabile{
+    pointer-events: none;
 }

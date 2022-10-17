@@ -2,8 +2,9 @@
 const playBUTTON = document.getElementById('play');
 
 function play() {
-
-    document.getElementById('h2').style.display='none';
+    let cucu = document.getElementById('cucu');
+    cucu.classList.remove('noncliccabile');
+    document.getElementById('h2').style.display = 'none';
     const NUM_BOMB = 16;
     const bombsPosition = [];
     let numCell;
@@ -11,7 +12,7 @@ function play() {
     fieldGame.innerHTML = '';
     const levelHTML = document.getElementById('livello');
     const level = levelHTML.value;
-    switch(level) {
+    switch (level) {
         case '1':
         default:
             numCell = 100;
@@ -36,28 +37,33 @@ function play() {
             <span></span>
             
         `;
-        if(bombsPosition.includes(num)) {
-            cell.classList.add('bomb');
-            cell.addEventListener('click', function() {
-                const arrBomb = document.querySelectorAll('.bomb');
-                for(let i = 0; i < arrBomb.length; i++) {
-                    arrBomb[i].classList.add('red');
-               
-                }    
-            });
-            } else {
-                cell.addEventListener('click', function() {
-                    this.classList.add('green');
-                });
-            }
-            return cell;
-        }
 
-    
-    
-    while(bombsPosition.length < NUM_BOMB) {
+        if (bombsPosition.includes(num)) {
+            cell.classList.add('bomb');
+            cell.addEventListener('click', function () {
+                const arrBomb = document.querySelectorAll('.bomb');
+                for (let i = 0; i < arrBomb.length; i++) {
+                    arrBomb[i].classList.add('red');
+                }
+                
+                cucu.classList.add('noncliccabile');
+            } 
+            
+            
+            );
+        } else {
+            cell.addEventListener('click', function () {
+                this.classList.add('green');
+            });
+        }
+        return cell;
+    }
+
+
+
+    while (bombsPosition.length < NUM_BOMB) {
         const bomb = randomNumber(1, numCell);
-        if(!bombsPosition.includes(bomb)) {
+        if (!bombsPosition.includes(bomb)) {
             bombsPosition.push(bomb);
         }
     }
@@ -67,7 +73,7 @@ function play() {
     function drawGrid() {
         const grid = document.createElement('div');
         grid.className = 'grid';
-        for(let i = 1; i <= numCell; i++) {
+        for (let i = 1; i <= numCell; i++) {
             const cell = drawCell(i);
             grid.appendChild(cell);
         }
