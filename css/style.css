@@ -1,0 +1,42 @@
+
+*{
+    font-family: 'Roboto', sans-serif
+}
+body {
+    background-color: 	#696969;
+    
+}
+
+header, footer {
+    background-color: black;
+    height: 80px;
+}
+
+main {
+    height: calc(100vh - 160px);
+    overflow-y: auto;
+}
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    width: 500px;
+    height: 500px;
+    background-color: #C0C0C0;
+}
+
+.square {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: 1px solid 	#303030;
+}
+
+.green {
+    background-color: greenyellow;
+}
+.red{
+    background-color: red;
+}

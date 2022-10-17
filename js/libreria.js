@@ -1,7 +1,7 @@
 function randomNumber(min, max) {
-    //console.log(arguments);//
     return Math.floor(Math.random() * (max - min + 1) ) + min;
 }
+
 function isEven(num){
     if(num % 2 === 0){
         return true;
@@ -9,6 +9,7 @@ function isEven(num){
         return false;
     }
 }
+
 function notificationError(msgError){
     const alerta = document.createElement('div');
     alerta.className='alert alert-danger';
@@ -20,12 +21,3 @@ function removeFirstNotification(){
     console.log(alertToRemove);
    if(alertToRemove) alertToRemove.remove();
 }
-const parola = 'pippo';
-const parolaLen = parola.length;
-let parolaGirata = parola.split('').reverse().join('');
-// for(let i = parolaLen - 1; i >= 0; i-- ){
-//     parolaGirata += parola.charAt(i);
-// }
-console.log(parolaGirata);
-
-
