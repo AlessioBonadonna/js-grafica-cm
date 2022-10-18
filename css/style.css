@@ -35,13 +35,15 @@ main {
 
 .green {
     background-color: greenyellow;
+    pointer-events: none;
 }
 .red{
     background-color: red;
     background-image: url('../img/bomba.svg');
     padding:2%;
     background-position: center;  
-    background-repeat: no-repeat
+    background-repeat: no-repeat;
+    pointer-events: none;
 
 }
 .noncliccabile{

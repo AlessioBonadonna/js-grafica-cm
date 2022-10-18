@@ -48,15 +48,19 @@ function play() {
         cell.innerHTML = `<span></span>`;
 
         //ciclo if con addEvent click con la funzione che mi differenza il rosso e il blu    
-
+        let counter =0
         if (bombsPosition.includes(num)) {
             cell.classList.add('bomb');
             cell.addEventListener('click', function () {
+                
                 const arrBomb = document.querySelectorAll('.bomb');
                 for (let i = 0; i < arrBomb.length; i++) {
                     arrBomb[i].classList.add('red');
+                    let endGame =document.getElementById('hola');
+                    endGame.innerHTML="hai perso dopo x mosse"
+                   
                 }
-                cucu.classList.add('noncliccabile');
+                fieldGame .classList.add('noncliccabile');
             
                 /*qua va inserito la frazione di codice per far spuntare il contatore di click !!!!
 
